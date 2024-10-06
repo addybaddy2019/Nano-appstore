@@ -29,26 +29,26 @@ def main():
 # lijst maken waarvan de gebruiker uit kan kiezen wat hij/zij wil spelen. 
 
 def speel_galgje():
-
     def kies_woord(moeilijkheidsgraad):
-      """Kiest een woord uit het tekstbestand op basis van de moeilijkheidsgraad."""
-     woorden = {}
-     try:
-        with open("makkelijk.txt", "r") as f:
-            woorden["makkelijk"] = f.read().splitlines()
-        with open("gemiddeld.txt", "r") as f:
-          woorden["gemiddeld"] = f.read().splitlines()
-        with open("moeilijk.txt", "r") as f:
-           woorden["moeilijk"] = f.read().splitlines()
-          except FileNotFoundError:
-     print("Woordenlijst niet gevonden.")
-     return None
+        """Kiest een woord uit het tekstbestand op basis van de moeilijkheidsgraad."""
+        woorden = {}
+        try:
+            with open("makkelijk.txt", "r") as f:
+                woorden["makkelijk"] = f.read().splitlines()
+            with open("gemiddeld.txt", "r") as f:
+                woorden["gemiddeld"] = f.read().splitlines()
+            with open("moeilijk.txt", "r") as f:
+                woorden["moeilijk"] = f.read().splitlines()
+        except FileNotFoundError:
+            print("Woordenlijst niet gevonden.")
+            return None
 
-     if moeilijkheidsgraad not in woorden:
-      print("Ongeldige moeilijkheidsgraad.")
-     return None
+        if moeilijkheidsgraad not in woorden:
+            print("Ongeldige moeilijkheidsgraad.")
+            return None
 
-     return random.choice(woorden[moeilijkheidsgraad])
+        return random.choice(woorden[moeilijkheidsgraad])
+
 
 def toon_woord(woord, geraden_letters):
   """Toont het woord met de geraden letters en streepjes voor de ongeraden letters."""
