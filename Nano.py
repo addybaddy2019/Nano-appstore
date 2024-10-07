@@ -25,7 +25,7 @@ def main():
 
 
 
-# positionering van functies verbeteren 
+ 
 # lijst maken waarvan de gebruiker uit kan kiezen wat hij/zij wil spelen. 
 
 def speel_galgje():
@@ -67,7 +67,7 @@ def speel_galgje():
   moeilijkheidsgraad = input("Kies een moeilijkheidsgraad (makkelijk, gemiddeld, moeilijk): ")
   max_fouten = int(input("Hoeveel keer mag je raden? "))
 
-  woord = kies_woord(moeilijkheidsgraad)
+  woord = kies_woord(moeilijkheidsgraad)                           # type: ignore
   if woord is None:
     return
 
