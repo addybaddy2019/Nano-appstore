@@ -53,27 +53,27 @@ def speel_galgje():
 
         return random.choice(woorden[moeilijkheidsgraad])
 
-word_list_ez = [
-    "appel", "auto", "fiets", "huis", "boom", "stoel", "tafel", "boek", "pen", "lamp",
-    "school", "koffer", "computer", "muis", "bord", "glas", "broek", "jas", "schoenen", "plant",
-    "tulp", "regen", "zon", "maan", "ster", "kind", "vogel", "vis", "kat", "hond",
-    "bal", "kaart", "weg", "vracht", "tas", "bed", "kussen", "laken", "zeep", "douche",
-    "tent", "koffie", "melk", "water", "boter", "brood", "kaas", "appelmoes", "sokken", "toets"
-]
-word_list_oke = [
-    "camera", "horizon", "vakantie", "gadget", "architect", "elektronisch", "familie", "toerisme", "scenario", "parfum",
-    "strategisch", "docent", "inflatie", "museum", "restaurant", "bezoeker", "beheerder", "kabouter", "herinnering", "station",
-    "fantasie", "zwembad", "document", "kantoor", "wandeling", "verrassing", "evenement", "muziek", "concert", "schilderij",
-    "telefoon", "jurist", "tovenaar", "tandarts", "historicus", "kunstwerk", "thermometer", "uitzending", "symfonie", "bibliotheek",
-    "organisme", "grafiek", "commercieel", "architectuur", "schrijver", "universiteit", "paraplu", "gemeente", "kompas", "navigatie"
-]
-word_list_diff = [
-    "psychologie", "xenofobie", "mysterieus", "paradox", "vernuftig", "ambtenarij", "quantumfysica", "synoniem", "chaos", "encyclopedie",
-    "hypothese", "constructie", "fysica", "karakteristiek", "idiosyncratisch", "juxtapositie", "ontwrichting", "bekwaamheid", "filosofie", "illusie",
-    "karaktereigenschap", "parlementariër", "delinquentie", "speculatie", "autobiografie", "procrastinatie", "inconsistentie", "verantwoordelijkheid", "reconstructie", "dialectiek",
-    "extravagant", "individu", "labyrint", "sociologie", "quarantaine", "volharding", "evolutionair", "perceptie", "transcendent", "machinist",
-    "ambiguïteit", "literaire", "substantieel", "cryptografie", "animositeit", "exclusiviteit", "fractaal", "methodologie", "ontologie", "introspectie"
-]
+# word_list_ez = [
+#     "appel", "auto", "fiets", "huis", "boom", "stoel", "tafel", "boek", "pen", "lamp",
+#     "school", "koffer", "computer", "muis", "bord", "glas", "broek", "jas", "schoenen", "plant",
+#     "tulp", "regen", "zon", "maan", "ster", "kind", "vogel", "vis", "kat", "hond",
+#     "bal", "kaart", "weg", "vracht", "tas", "bed", "kussen", "laken", "zeep", "douche",
+#     "tent", "koffie", "melk", "water", "boter", "brood", "kaas", "appelmoes", "sokken", "toets"
+# ]
+# word_list_oke = [
+#     "camera", "horizon", "vakantie", "gadget", "architect", "elektronisch", "familie", "toerisme", "scenario", "parfum",
+#     "strategisch", "docent", "inflatie", "museum", "restaurant", "bezoeker", "beheerder", "kabouter", "herinnering", "station",
+#     "fantasie", "zwembad", "document", "kantoor", "wandeling", "verrassing", "evenement", "muziek", "concert", "schilderij",
+#     "telefoon", "jurist", "tovenaar", "tandarts", "historicus", "kunstwerk", "thermometer", "uitzending", "symfonie", "bibliotheek",
+#     "organisme", "grafiek", "commercieel", "architectuur", "schrijver", "universiteit", "paraplu", "gemeente", "kompas", "navigatie"
+# ]
+# word_list_diff = [
+#     "psychologie", "xenofobie", "mysterieus", "paradox", "vernuftig", "ambtenarij", "quantumfysica", "synoniem", "chaos", "encyclopedie",
+#     "hypothese", "constructie", "fysica", "karakteristiek", "idiosyncratisch", "juxtapositie", "ontwrichting", "bekwaamheid", "filosofie", "illusie",
+#     "karaktereigenschap", "parlementariër", "delinquentie", "speculatie", "autobiografie", "procrastinatie", "inconsistentie", "verantwoordelijkheid", "reconstructie", "dialectiek",
+#     "extravagant", "individu", "labyrint", "sociologie", "quarantaine", "volharding", "evolutionair", "perceptie", "transcendent", "machinist",
+#     "ambiguïteit", "literaire", "substantieel", "cryptografie", "animositeit", "exclusiviteit", "fractaal", "methodologie", "ontologie", "introspectie"
+# ]
 
 def speel_galgje():
   """Speelt het galgje spel."""
