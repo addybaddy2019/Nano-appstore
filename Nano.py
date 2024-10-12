@@ -209,19 +209,21 @@ def display_hangman(tries):
     ]
     return stages[tries]
 
-
 def main():
-    word = get_word(word_list)                          # type: ignore
-    play(word)
-    while input("Opnieuw? (J/N) ").upper() == "J":
-        word = get_word(word_list)                              # type: ignore
+    naam = input("Wat is je naam? ")
+    print(f"Welkom bij Galgje, {naam}!")
+    difficulty = input("Kies een moeilijkheidsgraad (makkelijk, gemiddeld, moeilijk): ").lower()
+    word = choose_word(difficulty)
+    if word:
         play(word)
-
+        while input("Wil je opnieuw spelen? (J/N) ").upper() == "J":
+            difficulty = input("Kies een moeilijkheidsgraad (makkelijk, gemiddeld, moeilijk): ").lower()
+            word = choose_word(difficulty)
+            if word:
+                play(word)
 
 if __name__ == "__main__":
     main()
-
-
 
 
 
