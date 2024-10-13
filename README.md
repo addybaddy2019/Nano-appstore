@@ -29,19 +29,18 @@ Bouw de app (indien nodig): Volg de instructies in het README bestand van het pr
 ## Gebruik
 
 Door middel van kort Commands onderneem je een soort gesprek met de app store. 
--
--
--
--
+- cijfers invoeren 
+- teksten invoeren
 
 ## Features
 
 * Lijst met de belangrijkste features van je project.
 * Gebruik bullet points voor een overzichtelijke weergave.
+* interactieve apps
 
 ## Technologieën
 
-In deze project heb ik gebruik gemaakt van Python
+In deze project heb ik gebruik gemaakt van Python, JSON en TXT bestanden
 
 ## Bijdragen
 
@@ -50,6 +49,9 @@ Leg uit hoe anderen kunnen bijdragen aan je project. Bijvoorbeeld:
 * Fork de repository.
 * Maak een nieuwe branch voor je feature.
 * Maak een pull request.
+* research en develepment
+* uitdagende Errors
+* de juiste online educatie vinden
 
 ## Licentie
 
@@ -57,4 +59,7 @@ Geef aan onder welke licentie je project valt (bijv. MIT License).
 
 ## Contact
 
-Voeg je naam en contactgegevens toe (bijv. email adres of link naar je website).
+Adnan Shekh Hussen 
+1771588
+V1R 
+adnan@shekhHussen.student.hu.nl
