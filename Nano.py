@@ -3,242 +3,163 @@ import random
 import json
 from datetime import datetime
 
-def main():
-  """Toont het hoofdmenu en start het gekozen spel."""
-  while True:
-    print("\nWelkom bij Nano Store!")
-    print("1. Raad het nummer")
-    print("2. Galgje")
-    print("3. dagboek")
-    print("4. Afsluiten")
-
-    keuze = input("Kies een spel (1-3): ")
-
-    if keuze == "1":
-      raad_het_nummer()
-    elif keuze == "2":
-      speel_galgje()
-    elif keuze == "3":
-      dag_boek()
-    elif keuze == "4":
-      print("Tot ziens!")
-      break
-    else:
-      print("Ongeldige keuze. Probeer opnieuw.")
-
-
-def dag_boek():
-    return
- 
-# lijst maken waarvan de gebruiker uit kan kiezen wat hij/zij wil spelen. 
-
-def speel_galgje():
-    def kies_woord(moeilijkheidsgraad):
-        """Kiest een woord uit het tekstbestand op basis van de moeilijkheidsgraad."""
-        woorden = {}
-        try:
-            with open("makkelijk.txt", "r") as f:
-                woorden["makkelijk"] = f.read().splitlines()
-            with open("gemiddeld.txt", "r") as f:
-                woorden["gemiddeld"] = f.read().splitlines()
-            with open("moeilijk.txt", "r") as f:
-                woorden["moeilijk"] = f.read().splitlines()
-        except FileNotFoundError:
-            print("Woordenlijst niet gevonden.")
-            return None
-
-        if moeilijkheidsgraad not in woorden:
-            print("Ongeldige moeilijkheidsgraad.")
-            return None
-
-        return random.choice(woorden[moeilijkheidsgraad])
-
-# word_list_ez = [
-#     "appel", "auto", "fiets", "huis", "boom", "stoel", "tafel", "boek", "pen", "lamp",
-#     "school", "koffer", "computer", "muis", "bord", "glas", "broek", "jas", "schoenen", "plant",
-#     "tulp", "regen", "zon", "maan", "ster", "kind", "vogel", "vis", "kat", "hond",
-#     "bal", "kaart", "weg", "vracht", "tas", "bed", "kussen", "laken", "zeep", "douche",
-#     "tent", "koffie", "melk", "water", "boter", "brood", "kaas", "appelmoes", "sokken", "toets"
-# ]
-# word_list_oke = [
-#     "camera", "horizon", "vakantie", "gadget", "architect", "elektronisch", "familie", "toerisme", "scenario", "parfum",
-#     "strategisch", "docent", "inflatie", "museum", "restaurant", "bezoeker", "beheerder", "kabouter", "herinnering", "station",
-#     "fantasie", "zwembad", "document", "kantoor", "wandeling", "verrassing", "evenement", "muziek", "concert", "schilderij",
-#     "telefoon", "jurist", "tovenaar", "tandarts", "historicus", "kunstwerk", "thermometer", "uitzending", "symfonie", "bibliotheek",
-#     "organisme", "grafiek", "commercieel", "architectuur", "schrijver", "universiteit", "paraplu", "gemeente", "kompas", "navigatie"
-# ]
-# word_list_diff = [
-#     "psychologie", "xenofobie", "mysterieus", "paradox", "vernuftig", "ambtenarij", "quantumfysica", "synoniem", "chaos", "encyclopedie",
-#     "hypothese", "constructie", "fysica", "karakteristiek", "idiosyncratisch", "juxtapositie", "ontwrichting", "bekwaamheid", "filosofie", "illusie",
-#     "karaktereigenschap", "parlementariër", "delinquentie", "speculatie", "autobiografie", "procrastinatie", "inconsistentie", "verantwoordelijkheid", "reconstructie", "dialectiek",
-#     "extravagant", "individu", "labyrint", "sociologie", "quarantaine", "volharding", "evolutionair", "perceptie", "transcendent", "machinist",
-#     "ambiguïteit", "literaire", "substantieel", "cryptografie", "animositeit", "exclusiviteit", "fractaal", "methodologie", "ontologie", "introspectie"
-# ]
-
-def speel_galgje():
-  """Speelt het galgje spel."""
-
-  naam = input("Wat is je naam? ")
-  moeilijkheidsgraad = input("Kies een moeilijkheidsgraad (makkelijk, gemiddeld, moeilijk): ")
-  max_fouten = int(input("Hoeveel keer mag je raden? "))
-
-  woord = kies_woord(moeilijkheidsgraad)                           # type: ignore
-  if woord is None:
-    return
-
-
-def get_word(word_list):
-    word = random.choice(word_list)
-    return word.upper()
-
-
-def play(word):
-    word_completion = "_" * len(word)
-    guessed = False
-    gegokten_leters = []
-    gegokten_woorden = []
-    tries = 6
-    print("Laten we Galgje spelen!")
-    print(display_hangman(tries))
-    print(word_completion)
-    print("\n")
-    while not guessed and tries > 0:
-        guess = input("Raad een letter of woord: ").upper()
-        if len(guess) == 1 and guess.isalpha():
-            if guess in gegokten_leters:
-                print("Je hebt dit al geprobeerd: ", guess, "!")
-            elif guess not in word:
-                print(guess, "is niet in het woord :(")
-                tries -= 1
-                gegokten_leters.append(guess)
-            else:
-                print("Goed zo,", guess, "is in het woord!")
-                gegokten_leters.append(guess)
-                word_as_list = list(word_completion)
-                indices = [i for i, letter in enumerate(word) if letter == guess]
-                for index in indices:
-                    word_as_list[index] = guess
-                word_completion = "".join(word_as_list)
-                if "_" not in word_completion:
-                    guessed = True
-        elif len(guess) == len(word) and guess.isalpha():
-            if guess in gegokten_woorden:
-                print("Je hebt dit al geprobeerd: ", guess, "!")
-            elif guess != word:
-                print(guess, " is niet het woord :(")
-                tries -= 1
-                gegokten_woorden.append(guess)
-            else:
-                guessed = True
-                word_completion = word
+def kies_woord(moeilijkheidsgraad):
+    """Kiest een woord op basis van de moeilijkheidsgraad."""
+    try:
+        if moeilijkheidsgraad == "makkelijk":
+            with open("woordenlijst_mak.txt", "r") as file:
+                woorden = file.readlines()
+        elif moeilijkheidsgraad == "gemiddeld":
+            with open("woordenlijst_oke.txt", "r") as file:
+                woorden = file.readlines()
+        elif moeilijkheidsgraad == "moeilijk":
+            with open("woordenlijst_moei.txt", "r") as file:
+                woorden = file.readlines()
         else:
-            print("ongeldige input")
-        print(display_hangman(tries))
-        print(word_completion)
+            print("Ongeldige moeilijkheidsgraad. Kies uit makkelijk, gemiddeld of moeilijk.")
+            return None
+
+        return random.choice([woord.strip() for woord in woorden]).upper()
+    except FileNotFoundError:
+        print("Kon het woordenbestand niet vinden.")
+        return None
+
+def speel_galgje(woord):
+    """Speelt een potje galgje."""
+    woord_voltooid = "_" * len(woord)
+    geraden = False
+    geraden_letters = []
+    geraden_woorden = []
+    pogingen = 6
+    print("Laten we Galgje spelen!")
+    print(toon_galg(pogingen))
+    print(woord_voltooid)
+    print("\n")
+
+    while not geraden and pogingen > 0:
+        gok = input("Raad een letter of het hele woord: ").upper()
+        if len(gok) == 1 and gok.isalpha():
+            if gok in geraden_letters:
+                print(f"Je hebt de letter {gok} al geraden.")
+            elif gok not in woord:
+                print(f"{gok} zit niet in het woord.")
+                pogingen -= 1
+                geraden_letters.append(gok)
+            else:
+                print(f"Goed zo! {gok} zit in het woord!")
+                geraden_letters.append(gok)
+                woord_als_lijst = list(woord_voltooid)
+                indices = [i for i, letter in enumerate(woord) if letter == gok]
+                for index in indices:
+                    woord_als_lijst[index] = gok
+                woord_voltooid = "".join(woord_als_lijst)
+                if "_" not in woord_voltooid:
+                    geraden = True
+        elif len(gok) == len(woord) and gok.isalpha():
+            if gok in geraden_woorden:
+                print(f"Je hebt het woord {gok} al geraden.")
+            elif gok != woord:
+                print(f"{gok} is niet het juiste woord.")
+                pogingen -= 1
+                geraden_woorden.append(gok)
+            else:
+                geraden = True
+                woord_voltooid = woord
+        else:
+            print("Ongeldige invoer.")
+
+        print(toon_galg(pogingen))
+        print(woord_voltooid)
         print("\n")
-    if guessed:
-        print("Goed zo, je hebt het woord geraden!")
+
+    if geraden:
+        print(f"Gefeliciteerd! Je hebt het woord geraden: {woord}!")
     else:
-        print("Het spijt me, maar je hebt geen gokken meer. Het woord was " + word + ". Misschien heb je volgende keer meer geluk!")
+        print(f"Helaas, je hebt geen pogingen meer. Het woord was: {woord}.")
 
-
-def display_hangman(tries):
-    stages = [  """
-                   --------
-                   |      |
-                   |      O
-                   |     \\|/
-                   |      |
-                   |     / \\
-                   -
-                   """,
-                   """
-                   --------
-                   |      |
-                   |      O
-                   |     \\|/
-                   |      |
-                   |     /
-                   -
-                   """,
-                   """
-                   --------
-                   |      |
-                   |      O
-                   |     \\|/
-                   |      |
-                   |
-                   -
-                   """,
-                   """
-                   --------
-                   |      |
-                   |      O
-                   |     \\|
-                   |      |
-                   |
-                   -
-                   """,
-                   """
-                   --------
-                   |      |
-                   |      O
-                   |      |
-                   |      |
-                   |
-                   -
-                   """,
-                   """
-                   --------
-                   |      |
-                   |      O
-                   |
-                   |
-                   |
-                   -
-                   """,
-                   """
-                   --------
-                   |      |
-                   |      
-                   |
-                   |
-                   |
-                   -
-                   """
+def toon_galg(pogingen):
+    """Geeft de huidige status van de galg weer."""
+    stages = [
+        """
+           --------
+           |      |
+           |      O
+           |     \|/
+           |      |
+           |     / \
+        --------
+        """,
+        """
+           --------
+           |      |
+           |      O
+           |     \|/
+           |      |
+           |     /
+        --------
+        """,
+        """
+           --------
+           |      |
+           |      O
+           |     \|/
+           |      |
+           |
+        --------
+        """,
+        """
+           --------
+           |      |
+           |      O
+           |     \|
+           |      |
+           |
+        --------
+        """,
+        """
+           --------
+           |      |
+           |      O
+           |      |
+           |      |
+           |
+        --------
+        """,
+        """
+           --------
+           |      |
+           |      O
+           |
+           |
+           |
+        --------
+        """,
+        """
+           --------
+           |      |
+           |
+           |
+           |
+           |
+        --------
+        """,
     ]
-    return stages[tries]
+    return stages[pogingen]
 
-def main():
-    naam = input("Wat is je naam? ")
-    print(f"Welkom bij Galgje, {naam}!")
-    difficulty = input("Kies een moeilijkheidsgraad (makkelijk, gemiddeld, moeilijk): ").lower()
-    word = choose_word(difficulty)
-    if word:
-        play(word)
-        while input("Wil je opnieuw spelen? (J/N) ").upper() == "J":
-            difficulty = input("Kies een moeilijkheidsgraad (makkelijk, gemiddeld, moeilijk): ").lower()
-            word = choose_word(difficulty)
-            if word:
-                play(word)
-
-if __name__ == "__main__":
-    main()
-
-
-
-
-
-
-
-
-
-
+def dagboek():
+    """Functie om een dagboekentry te maken."""
+    datum = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    entry = input("Schrijf je dagboekentry: ")
+    try:
+        with open("dagboek.json", "a") as dagboek_file:
+            json.dump({"datum": datum, "entry": entry}, dagboek_file)
+            dagboek_file.write("\n")
+        print("Entry succesvol opgeslagen.")
+    except Exception as e:
+        print(f"Fout bij het opslaan van de entry: {e}")
 
 def raad_het_nummer():
-
-    ### Raad het getal spel ###
-
+    """Raad het nummer spel."""
     max_getal = int(input("Wat is het hoogste getal dat je wilt raden? "))
     random_getal = random.randint(1, max_getal)
     max_pogingen = int(input("Hoeveel keer mag je raden? "))
@@ -256,9 +177,34 @@ def raad_het_nummer():
         else:
             print("Fout! Het getal is lager.")
 
-    if poging < max_pogingen:
-        print(f"Je hebt nog {max_pogingen - poging} poging(en) over.")
-    else:
-        print(f"Helaas, je hebt geen pogingen meer over. Het juiste getal was {random_getal}.")
+    if poging == max_pogingen and gok != random_getal:
+        print(f"Helaas, je hebt geen pogingen meer. Het juiste getal was {random_getal}.")
 
-### Raad het getal spel ###
+def hoofdmenu():
+    """Toont het hoofdmenu en start het gekozen spel."""
+    while True:
+        print("\nWelkom bij Nano Store!")
+        print("1. Raad het nummer")
+        print("2. Galgje")
+        print("3. Dagboek")
+        print("4. Afsluiten")
+
+        keuze = input("Kies een optie (1-4): ")
+
+        if keuze == "1":
+            raad_het_nummer()
+        elif keuze == "2":
+            moeilijkheidsgraad = input("Kies een moeilijkheidsgraad (makkelijk, gemiddeld, moeilijk): ").lower()
+            woord = kies_woord(moeilijkheidsgraad)
+            if woord:
+                speel_galgje(woord)
+        elif keuze == "3":
+            dagboek()
+        elif keuze == "4":
+            print("Tot ziens!")
+            break
+        else:
+            print("Ongeldige keuze. Probeer opnieuw.")
+
+if __name__ == "__main__":
+    hoofdmenu()
