@@ -1,7 +1,1 @@
-[
-    "camera", "horizon", "vakantie", "gadget", "architect", "elektronisch", "familie", "toerisme", "scenario", "parfum",
-    "strategisch", "docent", "inflatie", "museum", "restaurant", "bezoeker", "beheerder", "kabouter", "herinnering", "station",
-    "fantasie", "zwembad", "document", "kantoor", "wandeling", "verrassing", "evenement", "muziek", "concert", "schilderij",
-    "telefoon", "jurist", "tovenaar", "tandarts", "historicus", "kunstwerk", "thermometer", "uitzending", "symfonie", "bibliotheek",
-    "organisme", "grafiek", "commercieel", "architectuur", "schrijver", "universiteit", "paraplu", "gemeente", "kompas", "navigatie"
-]
+camera horizon vakantie gadget architect elektronisch familie toerisme scenario parfum strategisch docent inflatie museum restaurant bezoeker beheerder kabouter herinnering station fantasie zwembad document kantoor wandeling verrassing evenement muziek concert schilderij telefoon jurist tovenaar tandarts historicus kunstwerk thermometer uitzending symfonie bibliotheek organisme grafiek commercieel architectuur schrijver universiteit paraplu gemeente kompas navigatie

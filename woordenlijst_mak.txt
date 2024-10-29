@@ -1,7 +1,1 @@
-[
-    "appel", "auto", "fiets", "huis", "boom", "stoel", "tafel", "boek", "pen", "lamp",
-    "school", "koffer", "computer", "muis", "bord", "glas", "broek", "jas", "schoenen", "plant",
-    "tulp", "regen", "zon", "maan", "ster", "kind", "vogel", "vis", "kat", "hond",
-    "bal", "kaart", "weg", "vracht", "tas", "bed", "kussen", "laken", "zeep", "douche",
-    "tent", "koffie", "melk", "water", "boter", "brood", "kaas", "appelmoes", "sokken", "toets"
-]
+appel auto fiets huis boom stoel tafel boek pen lamp school koffer computer muis bord glas broek jas schoenen plant tulp regen zon maan ster kind vogel vis kat hond bal kaart weg vracht tas bed kussen laken zeep douche tent koffie melk water boter brood kaas appelmoes sokken toets
