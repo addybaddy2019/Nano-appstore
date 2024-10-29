@@ -1,11 +1,13 @@
 import random  
 import json  
-from datetime import datetime  
-import Dagboekprog
+from datetime import datetime
+import dagboek
 import Raadhetnummerspel
 import SpelGalgje
 
-def hoofdmenu():
+
+
+def main():
     """Toont het hoofdmenu en start het gekozen spel."""
     while True:
         print("\nWelkom bij Nano Store!")
@@ -24,12 +26,12 @@ def hoofdmenu():
             if woord:
                 SpelGalgje.speel_galgje(woord)
         elif keuze == "3":  # Laat je een dagboekentry maken als je optie 3 kiest
-            Dagboekprog.dagboek()
+            dagboek.dagboek()
         elif keuze == "4":  # Sluit het programma af als je optie 4 kiest
             print("Tot ziens!")
             break
         else:
             print("Ongeldige keuze. Probeer opnieuw.")  # Zegt dat je een verkeerde keuze hebt gemaakt
 
-if __name__ == "__main__":
-    hoofdmenu()  # Start het hoofdmenu als het script wordt uitgevoerd
+
+main()  # Start het hoofdmenu als het script wordt uitgevoerd
