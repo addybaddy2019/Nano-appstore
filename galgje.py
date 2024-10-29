@@ -1,9 +1,7 @@
 import random
 
 def galgje():
-    """
-    Start het Galgje-spel, inclusief het kiezen van een woord, het spelen van een ronde, en het weergeven van de galgstatus.
-    """
+
     moeilijkheidsgraad = input("Kies een moeilijkheidsgraad (1: makkelijk, 2: gemiddeld, 3: moeilijk): ")
     try:
         if moeilijkheidsgraad == "1":
