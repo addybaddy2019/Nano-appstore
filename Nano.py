@@ -2,8 +2,8 @@ import random
 import json  
 from datetime import datetime
 import dagboek
-import Raadhetnummerspel
-import SpelGalgje
+import raadhetnummerspel
+import galgje
 
 
 
@@ -19,12 +19,12 @@ def main():
         keuze = input("Kies een optie (1-4): ")  # Vraagt je om een keuze te maken
 
         if keuze == "1":  # Start het spel 'Raad het nummer' als je optie 1 kiest
-            Raadhetnummerspel.raad_het_nummer()
+            raadhetnummerspel.raad_het_nummer()
         elif keuze == "2":  # Start het spel 'Galgje' als je optie 2 kiest
             moeilijkheidsgraad = input("Kies een moeilijkheidsgraad (1 = makkelijk, 2 = gemiddeld, 3 = moeilijk): ")
-            woord = SpelGalgje.kies_woord(moeilijkheidsgraad)
+            woord = galgje.kies_woord(moeilijkheidsgraad)
             if woord:
-                SpelGalgje.speel_galgje(woord)
+                galgje.speel_galgje(woord)
         elif keuze == "3":  # Laat je een dagboekentry maken als je optie 3 kiest
             dagboek.dagboek()
         elif keuze == "4":  # Sluit het programma af als je optie 4 kiest
