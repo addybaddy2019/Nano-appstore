@@ -2,7 +2,7 @@ import random
 
 
 
-def raad_het_nummer():
+def raadnum():
     """Raad het nummer spel."""
     max_getal = int(input("Wat is het hoogste getal dat je wilt raden? "))  # Vraagt je om het hoogste getal te kiezen
     random_getal = random.randint(1, max_getal)  # Kiest een willekeurig getal tussen 1 en het gekozen maximum
@@ -23,3 +23,11 @@ def raad_het_nummer():
 
     if poging == max_pogingen and gok != random_getal:  # Als je al je pogingen hebt gebruikt en het niet goed hebt
         print(f"Helaas, je hebt geen pogingen meer. Het juiste getal was {random_getal}.")
+
+
+
+def main():
+    raadnum()
+
+if __name__ == "__main__":
+    main()  # Start het hoofdmenu als het script wordt uitgevoerd
