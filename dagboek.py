@@ -2,13 +2,7 @@ import json
 from datetime import datetime
 
 def dagboek(bestands_pad="dagboek.json", aanvullen=True):
-    """
-    Functie om een dagboekentry te maken en op te slaan in een JSON-bestand.
 
-    Args:
-        bestands_pad (str): Het pad naar het bestand waarin de dagboekentry moet worden opgeslagen.
-        aanvullen (bool): Als True, voegt de entry toe aan het bestaande bestand, anders wordt het bestand overschreven.
-    """
     # Haal de huidige datum en tijd op
     datum = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     # Vraag de gebruiker om een dagboekentry
