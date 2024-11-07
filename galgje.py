@@ -1,6 +1,6 @@
 import random
 
-def galgje():
+def galg():
 
     moeilijkheidsgraad = input("Kies een moeilijkheidsgraad (1: makkelijk, 2: gemiddeld, 3: moeilijk): ")
     try:
