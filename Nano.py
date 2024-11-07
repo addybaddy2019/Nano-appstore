@@ -4,10 +4,6 @@ import random
 import json  
 from datetime import datetime
 
-
-
- 
-
 def main():
     """Toont het hoofdmenu en start het gekozen spel."""
     while True:
@@ -21,14 +17,9 @@ def main():
 
         if keuze == 1:  # Start het spel 'Raad het nummer' als je optie 1 kiest
             raadnum.raad_het_nummer()
-        elif keuze == 2:  # Start het spel 'Galgje' als je optie 2 kiest
-            moeilijkheidsgraad = input("Kies een moeilijkheidsgraad (1 = makkelijk, 2 = gemiddeld, 3 = moeilijk): ")
-            woord = galgje.kies_woord(moeilijkheidsgraad)
-            if woord:
-                galgje.speel_galgje(woord)
-        elif keuze == 3:  # Laat je een dagboekentry maken als je optie 3 kiest
+        elif keuze == 2:  # Laat je een dagboekentry maken als je optie 3 kiest
             dagboek.dagboek()
-        elif keuze == 4:  # Sluit het programma af als je optie 4 kiest
+        elif keuze == 3:  # Sluit het programma af als je optie 4 kiest
             print("Tot ziens!")
             break
         else:
