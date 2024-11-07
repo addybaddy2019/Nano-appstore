@@ -1,12 +1,13 @@
-import random  
-import json  
-from datetime import datetime
 import galgje
 import dagboek
 import raadnum
+import random  
+import json  
+from datetime import datetime
 
 
 
+ 
 
 def main():
     """Toont het hoofdmenu en start het gekozen spel."""
@@ -35,5 +36,4 @@ def main():
             print("Ongeldige keuze. Probeer opnieuw.")  # Zegt dat je een verkeerde keuze hebt gemaakt
 
 if __name__ == "__main__":
-
     main()  # Start het hoofdmenu als het script wordt uitgevoerd

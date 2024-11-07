@@ -141,8 +141,5 @@ def galgje():
         print(f"Helaas, je hebt geen pogingen meer. Het woord was: {woord}.")
 
 # Start het Galgje-spel
-def main():
-    galgje()
 
-if __name__ == "__main__":
-    main()  # Start het hoofdmenu als het script wordt uitgevoerd
+
