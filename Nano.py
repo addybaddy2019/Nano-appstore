@@ -9,17 +9,16 @@ def main():
     while True:
         print("\nWelkom bij Nano Store!")
         print("1. Raad het nummer")
-        print("2. Galgje")
-        print("3. Dagboek")
+        print("2. Dagboek")
         print("4. Afsluiten")
 
         keuze = int(input("Kies een optie (1-4): "))  # Vraagt je om een keuze te maken
 
         if keuze == 1:  # Start het spel 'Raad het nummer' als je optie 1 kiest
             raadnum.raad_het_nummer()
-        elif keuze == 2:  # Laat je een dagboekentry maken als je optie 3 kiest
+        elif keuze == 2:  # Laat je een dagboekentry maken als je optie 2 kiest
             dagboek.dagboek()
-        elif keuze == 3:  # Sluit het programma af als je optie 4 kiest
+        elif keuze == 3:  # Sluit het programma af als je optie 3 kiest
             print("Tot ziens!")
             break
         else:
