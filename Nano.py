@@ -22,7 +22,7 @@ def main():
             print("Tot ziens!")
             break
         else:
-            print("Ongeldige keuze. Probeer opnieuw.")  # Zegt dat je een verkeerde keuze hebt gemaakt
+            print("Ongeldige keuze. U moet een cijfer kiezen. Probeer opnieuw.")  # Zegt dat je een verkeerde keuze hebt gemaakt
 
 if __name__ == "__main__":
     main()  # Start het hoofdmenu als het script wordt uitgevoerd
