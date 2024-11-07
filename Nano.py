@@ -1,4 +1,4 @@
-import galgje
+import 
 import dagboek
 import raadnum
 import random  
@@ -18,18 +18,18 @@ def main():
         print("3. Dagboek")
         print("4. Afsluiten")
 
-        keuze = input("Kies een optie (1-4): ")  # Vraagt je om een keuze te maken
+        keuze = int(input("Kies een optie (1-4): "))  # Vraagt je om een keuze te maken
 
-        if keuze == "1":  # Start het spel 'Raad het nummer' als je optie 1 kiest
+        if keuze == 1:  # Start het spel 'Raad het nummer' als je optie 1 kiest
             raadnum.raad_het_nummer()
-        elif keuze == "2":  # Start het spel 'Galgje' als je optie 2 kiest
+        elif keuze == 2:  # Start het spel 'Galgje' als je optie 2 kiest
             moeilijkheidsgraad = input("Kies een moeilijkheidsgraad (1 = makkelijk, 2 = gemiddeld, 3 = moeilijk): ")
             woord = galgje.kies_woord(moeilijkheidsgraad)
             if woord:
                 galgje.speel_galgje(woord)
-        elif keuze == "3":  # Laat je een dagboekentry maken als je optie 3 kiest
+        elif keuze == 3:  # Laat je een dagboekentry maken als je optie 3 kiest
             dagboek.dagboek()
-        elif keuze == "4":  # Sluit het programma af als je optie 4 kiest
+        elif keuze == 4:  # Sluit het programma af als je optie 4 kiest
             print("Tot ziens!")
             break
         else:
